@@ -4,6 +4,7 @@
 #include "add.h"
 
 NODE *root = NULL;
+LOAN *loanHead = NULL;
 
 int main() {
     int choice, accNo;
@@ -12,7 +13,18 @@ int main() {
 
     while (1) {
         printf("\n=== BANK MANAGEMENT SYSTEM ===\n");
-        printf("1. Insert Account\n2. Deposit\n3. Withdraw\n4. Balance Enquiry\n5. Search\n6. Delete\n7. Display\n0. Exit\nChoice: ");
+       printf("1. Insert Account\n");
+       printf("2. Deposit\n");
+printf("3. Withdraw\n");
+printf("4. Balance Enquiry\n");
+printf("5. Search\n");
+printf("6. Delete\n");
+printf("7. Display\n");
+printf("8. Add Loan\n");
+printf("9. View All Loans\n");
+printf("10. View Loans for Account\n");
+printf("0. Exit\nChoice: ");
+
         scanf("%d", &choice);
 
         switch (choice) {
@@ -48,6 +60,31 @@ int main() {
         case 7:
             display(root);
             break;
+        case 8: {
+    int accNo, months;
+    float amount, rate;
+    printf("Enter account number: ");
+    scanf("%d", &accNo);
+    printf("Enter loan amount: ");
+    scanf("%f", &amount);
+    printf("Enter interest rate (%%): ");
+    scanf("%f", &rate);
+    printf("Enter duration in months: ");
+    scanf("%d", &months);
+    addLoan(&loanHead, accNo, amount, rate, months);
+    break;
+}
+case 9:
+    displayLoans(loanHead);
+    break;
+case 10: {
+    int accNo;
+    printf("Enter account number: ");
+    scanf("%d", &accNo);
+    displayLoansForAccount(loanHead, accNo);
+    break;
+}
+    
         case 0:
             printf("Goodbye!\n");
             return 0;
