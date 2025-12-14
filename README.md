@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Bank Account Management System
     Mini Project- C Program
 A C-based banking system with BST for accounts and a linked list for loans. It performs the entire CRUD operation on accounts along with the management of loans.
@@ -53,4 +54,6 @@ Test Cases and Menu Actions:
 | 9      | View All Loans       | List every loan                   |
 | 10     | See Loans for Account| Loans for specific account        |
 | 0      | Quit                 | Exit program                      |
+=======
+>>>>>>> b557deae82b922f2100fe501924462443a086d4e
 
